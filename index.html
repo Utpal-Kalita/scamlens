@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScamLens - read the warning signs before you act</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="brand">
+    <svg class="logo" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#f4a259" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="7"/><line x1="16" y1="16" x2="21" y2="21"/><line x1="8" y1="10.5" x2="13" y2="10.5"/><line x1="10.5" y1="8" x2="10.5" y2="13"/></svg>
+    <div>
+      <h1>ScamLens</h1>
+      <p class="tagline">Paste a suspicious message. See exactly what to question.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="input-panel">
+    <label for="msg">The message you received</label>
+    <textarea id="msg" rows="7" placeholder="Paste the full text here - SMS, WhatsApp, email, DM. It never leaves this browser: no upload, no storage, and links inside it are treated as plain text, never opened."></textarea>
+    <div class="row">
+      <button id="analyze" class="cta">Check message</button>
+      <span class="samples-label">Or try a sample:</span>
+      <button class="sample" data-sample="job">Fake job offer</button>
+      <button class="sample" data-sample="bank">Fake bank KYC</button>
+      <button class="sample" data-sample="parcel">Fake parcel fee</button>
+      <button class="sample" data-sample="legit">Ordinary message</button>
+    </div>
+  </section>
+
+  <section id="results" hidden>
+    <div class="verdict-band">
+      <div>
+        <h2 id="summary"></h2>
+        <p id="summarySub" class="sub"></p>
+      </div>
+      <div class="meter"><div id="meterFill"></div></div>
+    </div>
+    <p class="honesty">ScamLens shows warning signs, not verdicts. It cannot confirm any message is safe or fraudulent - always verify through a channel you look up yourself.</p>
+    <div class="cols">
+      <article class="annotated">
+        <h3>Your message, annotated</h3>
+        <div id="annotatedText"></div>
+        <p class="legend"><span class="mark-demo high"></span> stronger sign <span class="mark-demo med"></span> weaker sign - hover any highlight for why it matters</p>
+      </article>
+      <article class="flags">
+        <h3>What was found</h3>
+        <div id="flagList"></div>
+      </article>
+    </div>
+    <article class="checklist">
+      <h3>Before you reply, pay, or click</h3>
+      <ol>
+        <li><b>Pause.</b> Urgency is a tool. Real organizations accept "I'll call you back."</li>
+        <li><b>Verify independently.</b> Find the official number or site yourself - never use contact details from the message.</li>
+        <li><b>Never pay to receive.</b> Jobs, prizes, and parcels do not need upfront "verification" fees.</li>
+        <li><b>Guard codes and PINs.</b> Enter OTPs only in the official app or site you opened yourself - never share them with someone who messaged or called you first.</li>
+        <li><b>Ask someone you trust.</b> A two-minute second opinion beats a costly mistake.</li>
+      </ol>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <p>ScamLens runs entirely in your browser with a transparent, rule-based analysis - every flag shows the exact words that triggered it. Built for SafeSpace Hacks.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
